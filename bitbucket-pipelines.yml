@@ -20,6 +20,7 @@ pipelines:
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 IMAGE_NAME: "mss-business-app"
                 TAGS: "latest" # Optional
+                DEBUG: true
 definitions:
     services:
       docker:
