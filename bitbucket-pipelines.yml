@@ -17,7 +17,7 @@ pipelines:
               variables:
                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
-                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_DEFAULT_REGION: eu-west-2
                 IMAGE_NAME: "mss-business-app"
                 TAGS: "latest"
                 DEBUG: "true"
