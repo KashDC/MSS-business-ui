@@ -1,7 +1,6 @@
-
 {% extends "layouts/base.html" %}
 
-{% block title %} User Profile {% endblock %} 
+{% block title %} User Profile {% endblock %}
 
 <!-- Plugins CSS goes HERE  -->
 {% block plugin_stylesheets %}{% endblock plugin_stylesheets %}
@@ -12,162 +11,169 @@
 {% block content %}
 
     <div class="container-fluid">
-        <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <div class="row page-titles">
-            <div class="col-md-5 col-8 align-self-center">
-                <h3 class="text-themecolor m-b-0 m-t-0">Profile</h3>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Profile</li>
-                </ol>
-            </div>
-
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="row page-titles">
+        <div class="col-md-5 col-8 align-self-center">
+            <h3 class="text-themecolor m-b-0 m-t-0">Notifications</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Table</li>
+            </ol>
         </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
-        <!-- Row -->
 
-        <div class="row">
-            <!-- Column -->
-            <div class="col-lg-4 col-xlg-3 col-md-5">
-                  <div class="card">
-                  <form action="/action_page.php">
-                      <br>
-                    <label for="cars">Choose a customer:</label>
-                    <select name="customername" id="customername">
-                        <option value="John Smith">1. Mr.John Smith</option>
-                    </select>
-                    <input type="submit" value="Submit">
-                  </form>
-            </div>
-                <div class="card">
-
-
-                    <div class="card-block">
-                        <center class="m-t-30"> <img src="/static/assets/images/2.jpg" class="img-circle"
-                                width="150" />
-                            <h4 class="card-title m-t-10">
-                                {{ current_user.username }}
-                            </h4>
-                            <h6 class="card-subtitle">
-                                Admin
-                            </h6>
-                            <div class="row text-center justify-content-md-center">
-
-                                        <font class="font-medium">CRM Pipeline Application</font>
-
-                            </div>
-                        <blockquote class="trello-board-compact">
-  <a href="https://trello.com/b/OzUKhhfJ/crm-pipeline">Trello Board</a>
-</blockquote>
-<script src="https://p.trellocdn.com/embed.min.js"></script>
-                        </center>
-
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <!-- Column -->
-            <div class="col-lg-8 col-xlg-9 col-md-7">
-                <div class="card">
-                    <div class="card-block">
-                        <form class="form-horizontal form-material">
-                            <div class="form-group">
-                                <label class="col-md-12">id</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="1"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12">firstname</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="John"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12">lastname</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="Smith"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12">Address</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="Arizona"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12">postcode</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="85605"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="example-email" class="col-md-12">email</label>
-                                <div class="col-md-12">
-                                    <input type="email" value="john.smith@digicatapult.org.uk"
-                                        class="form-control form-control-line" name="example-email"
-                                        id="example-email">
-                                </div>
-                            </div>
-
-                             <div class="form-group">
-                                <label class="col-md-12">phone</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="07934584302"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12">organisation</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="Digital Catapult"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12">title</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="Mr"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-12">servicetier</label>
-                                <div class="col-md-12">
-                                    <input type="text" value="Tier 3"
-                                        class="form-control form-control-line">
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <button class="btn btn-success">Update Profile</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-        </div>
-        <!-- Row -->
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
     </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">Notifications Details</h4>
+
+                    <script>
+
+                        fetch('https://qit5ayfqrk.execute-api.eu-west-2.amazonaws.com/dev/assets/notifications').then(
+                            res => {
+                                res.json().then(
+                                    data => {
+                                        console.log(data.message);
+
+                                        if (data.message.length > 0) {
+                                            var temp = "";
+                                            data.message.forEach((u) => {
+                                                temp += "<tr>";
+                                                temp += "<td>" + u.notification_id + "</td>";
+                                                temp += "<td>" + u.title + "</td>";
+                                                temp += "<td>" + u.notification + "</td>";
+                                                temp += "<td>" + u.user_id + "</td>";
+                                                temp += "<td>" + u.timestamp + "</td>";
+                                                temp += "<td>" + u.acknowledge + "</td>";
+                                                temp += "<td>" + u.notification_type + "</td>";
+                                                temp += "<td>" + u.asset_id + "</td>";
+
+                                            })
+                                            $("button").click(function () {
+                                                document.getElementById("data").innerHTML = temp;
+                                            })
+                                        }
+                                    }
+                                )
+                            }
+                        )
+
+
+                    </script>
+
+                    <style>
+                        .ScrollStyle {
+                            max-height: 500px;
+                            overflow-y: scroll;
+                        }
+                    </style>
+                    <style>
+                        .button {
+                            background-color: #8C1437; /* Green */
+                            border: none;
+                            color: white;
+                            padding: 10px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 1px 1px;
+                            cursor: pointer;
+                        }
+
+
+                        .button1 {
+                            border-radius: 8px;
+                        }
+                    </style>
+                    <div class="ScrollStyle">
+                        <div class="table-responsive">
+                            <button class="button button1">Display all Notification</button>
+                            <input id='myInput' onkeyup='searchTable()' type='text' placeholder="Type to search">
+                            <table class="table" id="tablecustomer">
+                                <thead>
+                                <tr>
+
+
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Notification</th>
+                                    <th>User ID</th>
+                                    <th>Timestamp</th>
+                                    <th>Acknowledge</th>
+                                    <th>Type</th>
+                                    <th>Asset ID</th>
+
+
+                                </tr>
+                                </thead>
+                                <tbody id="data">
+
+                                </tbody>
+
+
+                            </table>
+                            <style>
+                                body {
+                                    padding: 20px;
+                                }
+
+                                input {
+                                    margin-bottom: 5px;
+                                    padding: 2px 3px;
+                                    width: 209px;
+                                }
+
+                                td {
+                                    padding: 4px;
+                                    border: 1px #CCC solid;
+                                    width: 100px;
+                                }
+                            </style>
+                            <script>
+                                function searchTable() {
+                                    var input, filter, found, table, tr, td, i, j;
+                                    input = document.getElementById("myInput");
+                                    filter = input.value.toUpperCase();
+                                    table = document.getElementById("tablecustomer");
+                                    tr = table.getElementsByTagName("tr");
+                                    for (i = 0; i < tr.length; i++) {
+                                        td = tr[i].getElementsByTagName("td");
+                                        for (j = 0; j < td.length; j++) {
+                                            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                                found = true;
+                                            }
+                                        }
+                                        if (found) {
+                                            tr[i].style.display = "";
+                                            found = false;
+                                        } else {
+                                            tr[i].style.display = "none";
+                                        }
+                                    }
+                                }
+                            </script>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 {% endblock content %}
 

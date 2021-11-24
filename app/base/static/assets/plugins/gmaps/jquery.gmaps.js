@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     map = new GMaps({
         el: '#gmaps-simple',
         lat: 34.05,

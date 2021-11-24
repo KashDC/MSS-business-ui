@@ -5,27 +5,28 @@
         <nav class="sidebar-nav">
 
             {% if current_user.is_authenticated %}
-            <ul id="sidebarnav">
-                <li> <a class="waves-effect waves-dark" href="/" aria-expanded="false"><i
+                <ul id="sidebarnav">
+                    <li><a class="waves-effect waves-dark" href="/" aria-expanded="false"><i
                             class="mdi mdi-gauge"></i><span class="hide-menu">Enterprise Dashboard</span></a>
-                </li>
-                <li> <a class="waves-effect waves-dark" href="/page-profile.html" aria-expanded="false"><i
-                            class="mdi mdi-account-check"></i><span class="hide-menu">Customer Profile</span></a>
-                </li>
-                <li> <a class="waves-effect waves-dark" href="/Assets.html" aria-expanded="false"><i
+                    </li>
+                    <li><a class="waves-effect waves-dark" href="/table-basic.html" aria-expanded="false"><i
+                            class="mdi mdi-settings-box"></i><span class="hide-menu">Customers Profile</span></a>
+                    </li>
+
+                    <li><a class="waves-effect waves-dark" href="/Assets.html" aria-expanded="false"><i
                             class="mdi mdi-gauge"></i><span class="hide-menu">Assets </span></a>
-                </li>
+                    </li>
+                    <li><a class="waves-effect waves-dark" href="/notifications.html" aria-expanded="false"><i
+                            class="mdi mdi-account-check"></i><span class="hide-menu">Notifications Log</span></a>
+                    </li>
 
-                <li> <a class="waves-effect waves-dark" href="/table-basic.html" aria-expanded="false"><i
-                            class="mdi mdi-settings-box"></i><span class="hide-menu">Customers Log</span></a>
-                </li>
 
-                <li> <a class="waves-effect waves-dark" href="{{ url_for('base_blueprint.logout') }}" aria-expanded="false"><i
+                    <li><a class="waves-effect waves-dark" href="{{ url_for('base_blueprint.logout') }}"
+                           aria-expanded="false"><i
                             class="mdi mdi-power"></i><span class="hide-menu">Logout</span></a>
-                </li>
-            </ul>
+                    </li>
+                </ul>
             {% endif %}
-
 
 
         </nav>
@@ -36,13 +37,14 @@
     <!-- Bottom points-->
     <div class="sidebar-footer">
         {% if current_user.is_authenticated %}
-        <!-- item--><a href="/page-profile.html" class="link" data-toggle="tooltip" title="Settings"><i
+            <!-- item--><a href="/page-profile.html" class="link" data-toggle="tooltip" title="Settings"><i
                 class="ti-settings"></i></a>
-        <!-- item--><a href="/" class="link" data-toggle="tooltip" title="Email"><i
+            <!-- item--><a href="/" class="link" data-toggle="tooltip" title="Email"><i
                 class="mdi mdi-gmail"></i></a>
-        <!-- item--><a href="{{ url_for('base_blueprint.logout') }}" class="link" data-toggle="tooltip" title="Logout"><i
-                class="mdi mdi-power"></i></a> </div>
-        {% endif %}                
+            <!-- item-->
+            <a href="{{ url_for('base_blueprint.logout') }}" class="link" data-toggle="tooltip" title="Logout"><i
+                    class="mdi mdi-power"></i></a> </div>
+        {% endif %}
     <!-- End Bottom points-->
 </aside>
 

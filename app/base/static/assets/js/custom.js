@@ -1,19 +1,14 @@
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: js
-*/
-$(function() {
+
+$(function () {
     "use strict";
-    $(function() {
+    $(function () {
         $(".preloader").fadeOut();
     });
 
     // ============================================================== 
     // This is for the top header part and sidebar part
     // ==============================================================  
-    var set = function() {
+    var set = function () {
         var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
         var topOffset = 70;
         if (width < 1170) {
@@ -41,24 +36,24 @@ $(function() {
     $(".fix-header .topbar").stick_in_parent({});
 
     // this is for close icon when navigation open in mobile view
-    $(".nav-toggler").click(function() {
+    $(".nav-toggler").click(function () {
         $("body").toggleClass("show-sidebar");
         $(".nav-toggler i").toggleClass("ti-menu");
         $(".nav-toggler i").addClass("ti-close");
     });
-    $(".sidebartoggler").on('click', function() {
+    $(".sidebartoggler").on('click', function () {
         //$(".sidebartoggler i").toggleClass("ti-menu");
     });
-    $(".search-box a, .search-box .app-search .srh-btn").on('click', function() {
+    $(".search-box a, .search-box .app-search .srh-btn").on('click', function () {
         $(".app-search").toggle(200);
     });
 
     // ============================================================== 
     // Auto select left navbar
     // ============================================================== 
-    $(function() {
+    $(function () {
         var url = window.location;
-        var element = $('ul#sidebarnav a').filter(function() {
+        var element = $('ul#sidebarnav a').filter(function () {
             return this.href == url;
         }).addClass('active').parent().addClass('active');
         while (true) {
@@ -72,13 +67,13 @@ $(function() {
     // ============================================================== 
     //tooltip
     // ============================================================== 
-    $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-        // ============================================================== 
-        // Sidebarmenu
-        // ============================================================== 
-    $(function() {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    // ==============================================================
+    // Sidebarmenu
+    // ==============================================================
+    $(function () {
         $('#sidebarnav').metisMenu();
     });
     // ============================================================== 

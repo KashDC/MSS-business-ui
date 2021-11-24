@@ -30,6 +30,7 @@ var defaultOptions = {
 `bower install chartist-plugin-tooltip --save`
 
 With descriptive text:
+
 ```js
 var chart = new Chartist.Line('.ct-chart', {
   labels: [1, 2, 3],
@@ -53,6 +54,7 @@ var chart = new Chartist.Line('.ct-chart', {
 ```
 
 Without descriptive text:
+
 ```js
 var chart = new Chartist.Line('.ct-chart', {
   labels: [1, 2, 3, 4, 5, 6, 7],
@@ -68,6 +70,7 @@ var chart = new Chartist.Line('.ct-chart', {
 ```
 
 With options text:
+
 ```js
 var chart = new Chartist.Line('.ct-chart', {
   labels: [1, 2, 3],
@@ -94,13 +97,11 @@ var chart = new Chartist.Line('.ct-chart', {
 });
 ```
 
-
-
 ## Custom point element.
 
-In ChartistJS you can replace default element with smth different.
-There is a pretty [demo](https://gionkunz.github.io/chartist-js/examples.html) (*USING EVENTS TO REPLACE GRAPHICS*).
-And if you want the tooltip to work fine with a new element, you need to include two more properties:
+In ChartistJS you can replace default element with smth different. There is a
+pretty [demo](https://gionkunz.github.io/chartist-js/examples.html) (*USING EVENTS TO REPLACE GRAPHICS*). And if you
+want the tooltip to work fine with a new element, you need to include two more properties:
 
 ```javascript
 'ct:value': data.value.y,
@@ -108,6 +109,7 @@ And if you want the tooltip to work fine with a new element, you need to include
 ```
 
 So the final code could look like this. Here is a [live demo](https://jsfiddle.net/AlexanderKozhevin/aapycL87/)
+
 ```javascript
 chart.on('draw', function(data) {
   // If the draw event was triggered from drawing a point on the line chart
