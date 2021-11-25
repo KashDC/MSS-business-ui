@@ -1,0 +1,402 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %}
+
+<!-- Plugins CSS goes HERE  -->
+{% block plugin_stylesheets %}{% endblock plugin_stylesheets %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="row page-titles">
+        <div class="col-md-5 col-8 align-self-center">
+            <h3 class="text-themecolor m-b-0 m-t-0">Table</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Table</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="card">
+
+
+            <div class="card-block">
+                <center class="m-t-30">
+                    <img src="/static/assets/images/2.jpg" class="img-circle" width="150"/>
+                    <h4 class="card-title m-t-10">
+                        {{ current_user.username }}
+                    </h4>
+                    <h6 class="card-subtitle">
+                        Admin
+                    </h6>
+                    <div class="row text-center justify-content-md-center">
+                        <font class="font-medium">CRM Pipeline Application</font>
+
+                    </div>
+                    <blockquote class="trello-board-compact">
+                        <a href="https://trello.com/b/OzUKhhfJ/crm-pipeline">Trello Board</a>
+                    </blockquote>
+                    <script src="https://p.trellocdn.com/embed.min.js"></script>
+                </center>
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-xlg-3 col-md-5">
+            <div class="card">
+                <form id="custform" action="/table-basic..html">
+
+                    <center>
+
+                        <label for="cars">Choose a customer:</label>
+                        <br><select name="customername" id="customername">
+                        <option value="John Smith">1. Mr.John Smith</option>
+                    </select><br>
+                        <br>
+                        <input type="submit" value="Submit">
+                </form>
+                </center>
+            </div>
+            <div class="col-lg-14">
+                <div class="card">
+                    <center>
+                        <div class="card-block">
+                            <h4 class="card-title">Ticketing</h4>
+                            <h6 class="card-subtitle">Log a ticket for any unidentified issues</h6>
+                            <script>
+                                const container = document.getElementById("card-component-example");
+                                container.innerText = "Loading...";
+
+                                const scriptSrc = window.customElements
+                                    ? "/card.min.js"
+                                    : "/card-polyfilled.min.js";
+                                const cardJs = document.createElement("script");
+                                cardJs.crossOrigin = "anonymous";
+                                cardJs.src = "https://p.trellocdn.com" + scriptSrc;
+
+                                cardJs.onload = function () {
+                                    fetch(
+                                        "https://api.trello.com/1/card/MA6fxIg3?fields=name,closed,url,badges,idAttachmentCover,labels&attachments=cover&customFields=true&customFieldItems=true&members=true&stickers=true"
+                                    )
+                                        .then(function (resp) {
+                                            return resp.json();
+                                        })
+                                        .then(function (card) {
+                                            const cardEl = document.createElement("trello-card");
+                                            cardEl.card = card;
+                                            container.innerHTML = "";
+                                            container.appendChild(cardEl);
+                                        });
+                                };
+                                document.head.appendChild(cardJs);
+                            </script>
+
+                            <div style="width:272px;background-color:#dfe1e6;padding:8px;">
+                                <div id="card-component-example">
+                                    <!DOCTYPE html>
+                                    <html>
+                                    <head>
+                                        <!-- Your head content -->
+                                        <script>
+                                            const scriptSrc = window.customElements
+                                                ? "/card.min.js"
+                                                : "/card-polyfilled.min.js";
+                                            window.cardComponentLoaded = new Promise(function (resolve) {
+                                                const cardJs = document.createElement("script");
+                                                cardJs.crossOrigin = "anonymous";
+                                                cardJs.src = "https://p.trellocdn.com" + scriptSrc;
+                                                cardJs.onload = resolve;
+                                                document.head.appendChild(cardJs);
+                                            });
+                                        </script>
+                                    </head>
+                                    <body>
+                                    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+                                    <form class="form-signin" method="POST"
+                                          action="https://api.trello.com/1/cards?key=68205d266701719b3dca7051f06f4180&token=ff994443e5a6440a5080481f2c88f93a5bcd89998d5464e33cec3ada8dbe6121&idList=615ef438dfbd90048735b8c4&name&desc"
+                                          target="dummyframe">
+                                        <h6 class="form-signin-heading">Ticket with Customer details</h6>
+                                        <input class="form-control" type="text" required name="name"
+                                               placeholder="Customer_Name:Asset">
+                                        <input class="form-control" type="text" required name="desc"
+                                               placeholder="Detail Description for the Card">
+                                        <button class="button button1" type="submit">Log Ticket</button>
+                                    </form>
+                                    </body>
+                                    </html>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+
+                <div class="card">
+                    <div class="card-block">
+                        <form class="form-horizontal form-material">
+                            <div class="form-group">
+                                <label class="col-md-12">id</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="1"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">firstname</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="John"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">lastname</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="Smith"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Address</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="Arizona"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">postcode</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="85605"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-email" class="col-md-12">email</label>
+                                <div class="col-md-12">
+                                    <input type="email" value="john.smith@digicatapult.org.uk"
+                                           class="form-control form-control-line" name="example-email"
+                                           id="example-email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-12">phone</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="07934584302"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">organisation</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="Digital Catapult"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">title</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="Mr"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">servicetier</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="Tier 3"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-success">Update Profile</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+
+
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">Customer Details</h4>
+
+                        <script>
+
+                            fetch('https://qit5ayfqrk.execute-api.eu-west-2.amazonaws.com/dev/user').then(
+                                res => {
+                                    res.json().then(
+                                        data => {
+                                            console.log(data);
+
+                                            if (data.length > 0) {
+                                                var temp = "";
+                                                data.forEach((u) => {
+                                                    temp += "<tr>";
+                                                    temp += "<td>" + u.id + "</td>";
+                                                    temp += "<td>" + u.title + "</td>";
+                                                    temp += "<td>" + u.firstname + "</td>";
+                                                    temp += "<td>" + u.lastname + "</td>";
+                                                    temp += "<td>" + u.address + "</td>";
+                                                    temp += "<td>" + u.postcode + "</td>";
+                                                    temp += "<td>" + u.email + "</td>";
+                                                    temp += "<td>" + u.phone + "</td>";
+                                                    temp += "<td>" + u.organisation + "</td>";
+                                                    temp += "<td>" + u.servicetier + "</td>";
+
+                                                })
+                                                $("button").click(function () {
+                                                    document.getElementById("data").innerHTML = temp;
+                                                })
+                                            }
+                                        }
+                                    )
+                                }
+                            )
+
+
+                        </script>
+
+                        <style>
+                            .ScrollStyle {
+                                max-height: 300px;
+                                overflow-y: scroll;
+                            }
+                        </style>
+                        <style>
+                            .button {
+                                background-color: #8C1437; /* Green */
+                                border: none;
+                                color: white;
+                                padding: 10px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;
+                                margin: 1px 1px;
+                                cursor: pointer;
+                            }
+
+
+                            .button1 {
+                                border-radius: 8px;
+                            }
+                        </style>
+                        <div class="ScrollStyle">
+                            <div class="table-responsive">
+                                <button class="button button1">Display all Users</button>
+                                <input id='myInput' onkeyup='searchTable()' type='text' placeholder="Type to search">
+                                <table class="table" id="tablecustomer">
+                                    <thead>
+                                    <tr>
+
+
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Address</th>
+                                        <th>Postcode</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Organisation</th>
+                                        <th>Service Tier</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="data">
+
+                                    </tbody>
+
+
+                                </table>
+                                <style>
+                                    body {
+                                        padding: 20px;
+                                    }
+
+                                    input {
+                                        margin-bottom: 5px;
+                                        padding: 2px 3px;
+                                        width: 209px;
+                                    }
+
+                                    td {
+                                        padding: 4px;
+                                        border: 1px #CCC solid;
+                                        width: 100px;
+                                    }
+                                </style>
+                                <script>
+                                    function searchTable() {
+                                        var input, filter, found, table, tr, td, i, j;
+                                        input = document.getElementById("myInput");
+                                        filter = input.value.toUpperCase();
+                                        table = document.getElementById("tablecustomer");
+                                        tr = table.getElementsByTagName("tr");
+                                        for (i = 0; i < tr.length; i++) {
+                                            td = tr[i].getElementsByTagName("td");
+                                            for (j = 0; j < td.length; j++) {
+                                                if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                                    found = true;
+                                                }
+                                            }
+                                            if (found) {
+                                                tr[i].style.display = "";
+                                                found = false;
+                                            } else {
+                                                tr[i].style.display = "none";
+                                            }
+                                        }
+                                    }
+                                </script>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+    </div>
+
+
+{% endblock content %}
+
+{% block javascripts %}{% endblock javascripts %}
+
